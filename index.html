@@ -1,31 +1,55 @@
 <!doctype html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>LTDL3 Search Builder Prototype</title>
+  <meta charset="utf-8">
+  <title>LTDL3 Search Builder Prototype</title>
   </head>
   <body>
-    <div id="content"></div>
+  <div id="content"></div>
 
-    <script src="http://fb.me/react-0.10.0.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
-    <script type="text/jsx">
-        /**
-         * @jsx React.DOM
-         */
-        var SearchContainer = React.createClass({
-          render: function() {
-            return (
-              <div className="searchContainer">
-                I am a SearchContainer.
-              </div>
-            );
-          }
-        });
-        React.renderComponent(
-          <SearchContainer />,
-          document.getElementById('content')
-        );
-    </script>
+  <script src="http://fb.me/react-0.10.0.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.10.0.js"></script>
+  <script type="text/jsx">
+    /**
+     * @jsx React.DOM
+     */
+
+    var SearchResultsList = React.createClass({
+      render: function() {
+      return (
+        <div className="searchResultsList">
+          I am a SearchResultList.
+        </div>
+      );
+      }
+    });
+
+    var SearchForm = React.createClass({
+      render: function() {
+      return (
+        <div className="searchForm">
+          I am a SearchForm.
+        </div>
+      );
+      }
+    });
+
+    var SearchContainer = React.createClass({
+      render: function() {
+      return (
+        <div className="searchContainer">
+        <h1>LTDL3 Search Builder Prototype</h1>
+        <SearchForm />
+        <SearchResultsList />
+        </div>
+      );
+      }
+    });
+
+    React.renderComponent(
+      <SearchContainer />,
+      document.getElementById('content')
+    );
+  </script>
   </body>
 </html>
