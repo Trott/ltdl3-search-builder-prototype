@@ -13,12 +13,23 @@
     /**
      * @jsx React.DOM
      */
+    var SearchResult = React.createClass({
+      render: function() {
+        return (
+          <div className="searchResult">
+            <a href={this.props.href}>{this.props.children}</a>
+          </div>
+        );
+      }
+    });
 
     var SearchResultsList = React.createClass({
       render: function() {
       return (
         <div className="searchResultsList">
-          I am a SearchResultList.
+          <SearchResult href="http://www.example.com/">Example.com search result</SearchResult>
+          <SearchResult href="http://musicroutes.com/">Music Routes search result</SearchResult>
+          <SearchResult href="http://palacefamilysteakhouse.com/">Palace Family Steak House!</SearchResult>
         </div>
       );
       }
