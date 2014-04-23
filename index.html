@@ -52,19 +52,22 @@
     });
 
     var SearchContainer = React.createClass({
+      getInitialState: function() {
+        return {searchResultsData: {docs:[]}};
+      },
       render: function() {
       return (
         <div className="searchContainer">
         <h1>LTDL3 Search Builder Prototype</h1>
         <SearchForm />
-        <SearchResultsList searchResultsData={this.props.searchResultsData} />
+        <SearchResultsList searchResultsData={this.state.searchResultsData} />
         </div>
       );
       }
     });
 
     React.renderComponent(
-      <SearchContainer searchResultsData={myJson.response} />,
+      <SearchContainer />,
       document.getElementById('content')
     );
   </script>
